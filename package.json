@@ -1,4 +1,5 @@
 {
+  "homepage": "http://S1lenc1995.github.io/step_project3",
   "name": "project",
   "version": "0.1.0",
   "description": "SASS compile|autoprefix|minimize and live-reload dev server using Browsersync for static HTML",
@@ -17,9 +18,10 @@
     "watch": "npm-run-all --parallel watch:*",
     "serve": "browser-sync start --server public --files public build:js watch:js",
     "start": "npm-run-all copy --parallel watch serve build:*",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "npm-run-all copy:html build:*",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map"
-
   },
   "dependencies": {
     "autoprefixer": "^10.4.2",
@@ -33,6 +35,7 @@
     "sass": "^1.49.8"
   },
   "devDependencies": {
-    "esmify": "^2.1.1"
+    "esmify": "^2.1.1",
+    "gh-pages": "^5.0.0"
   }
 }
