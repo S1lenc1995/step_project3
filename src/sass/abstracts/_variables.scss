@@ -1,0 +1,47 @@
+@import "globals";
+// Device breakpoints
+$breakpoints: (
+  "phone": 320px,
+  "phone-wide": 481px,
+  "phablet": 560px,
+  "tablet-small": 640px,
+  "tablet": 768px,
+  "tablet_s": 993px,
+  "tablet-wide": 1024px,
+  "desktop": 1200px,
+  "desktop-wide": 1440px,
+);
+
+//Colors
+$primary-color: rgba(17, 219, 207, 0.8);
+$light-blue: rgba(56, 169, 240, 0.8);
+$darkBlue: #000080;
+$steelBlueA: rgba(70, 130, 180, 0.8);
+$light-grey-color: rgba(34, 60, 80, 0.2);
+$steelBlue: #4682b4;
+$midnightBlue: #191970;
+$white-color: #ffffff;
+$white-grey-color: #e5e5e5;
+$black: #000000;
+$opacity-black-color: rgb(0, 0, 0, 0.6);
+$black-color: black;
+$DeepSkyBlue: #00bfff;
+
+// Font-sizes
+
+$fs-base: rem(16);
+$fs-secondary: rem(14);
+$fs-medium: rem(20);
+$fs-large-m: rem(26);
+$fs-extra-small: rem(10);
+$fs-large-t: rem(21);
+$fs-large-d: rem(30);
+$fs-extra-large: rem(54);
+
+// Other default settings
+$default-border-radius: rem(40);
+$border-default: rem(5) solid;
+
+//Fonts
+$base-font: "Montserrat", sans-serif;
+$secondary-font: "Lato", sans-serif;

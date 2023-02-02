@@ -1,0 +1,74 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../abstracts/globals";
+.filter__bar {
+  @include flex-center;
+  padding-top: rem(50);
+  gap: rem(10);
+  flex-direction: column;
+  @include mq("tablet") {
+    max-width: 100%;
+    flex-direction: row;
+  }
+  #search__btn {
+    position: relative;
+    padding: rem(12);
+    width: rem(120);
+    text-align: start;
+    &:after {
+      display: block;
+      content: "\1F50D";
+      position: absolute;
+      font-size: $fs-medium;
+      left: 68%;
+      top: 34%;
+    }
+  }
+  select,
+  .search__btn {
+    @include blue-btn;
+    background-color: $steelBlue;
+    border: 1px solid $steelBlue;
+    color: $white-color;
+    outline: none;
+  }
+  #search {
+    cursor: pointer;
+    font-family: $base-font;
+    padding: rem(11) rem(20);
+    outline: none;
+    border: 1px solid $steelBlue;
+    border-radius: $default-border-radius;
+    font-weight: 700;
+    font-size: $fs-secondary;
+    line-height: $fs-secondary;
+    color: $darkBlue;
+    margin: 10px 10px 10px 20px;
+    position: relative;
+    &:focus {
+      box-shadow: 0 0 25px $light-blue;
+    }
+  }
+}
+
+.filter__bar--select {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: rem(18);
+}
+.title__search {
+  position: relative;
+  &:after {
+    display: block;
+    content: "\00270d";
+    position: absolute;
+    font-size: $fs-medium;
+    z-index: 2;
+    left: 4.625rem;
+    bottom: -49px;
+    @include mq("tablet") {
+      left: rem(202);
+      bottom: -10px;
+    }
+  }
+}

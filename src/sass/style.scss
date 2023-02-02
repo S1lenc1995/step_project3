@@ -1,0 +1,18 @@
+@import "abstracts/mixins";
+@import "abstracts/reset";
+@import "abstracts/globals";
+@import "abstracts/variables";
+@import "components/header";
+@import "components/add_modal";
+@import "./components/registrationForm";
+@import "./components/cards";
+@import "./components/filter_bar";
+@import "./components/footer";
+
+
+//
+.body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

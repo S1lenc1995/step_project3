@@ -1,0 +1,182 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../abstracts/globals";
+
+.header {
+  height: rem(500);
+  background-image: url("/assets/med.jpg");
+  @include img-parallax;
+  position: relative;
+}
+
+//Navigation behaviour on various screens
+
+.wrap {
+  display: flex;
+}
+.menu {
+  padding: rem(5) rem(5);
+  background: $steelBlue;
+  &__wrapper {
+    @include space-between;
+    padding: 0 3%;
+
+    &__logo {
+      color: $white-color;
+      text-shadow: rem(3) rem(5) rem(6) $black;
+      font-weight: 700;
+      font-size: $fs-large-d;
+      @include flex-center;
+      gap: rem(17);
+      &:hover {
+        color: $DeepSkyBlue;
+      }
+    }
+    &__logo__enter {
+      @include blue-btn;
+    }
+
+    &__burger {
+      border: none;
+      width: rem(26);
+      background-color: inherit;
+      cursor: pointer;
+
+      &.open {
+        .menu__wrapper__burger__span-container {
+          position: relative;
+
+          &__line {
+            &:first-child {
+              position: absolute;
+              width: rem(26);
+              transform: rotate(-45deg);
+            }
+
+            &:last-child {
+              position: absolute;
+              transform: rotate(45deg);
+            }
+
+            &:nth-child(2) {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &__span-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: rem(6);
+
+        &__line {
+          display: block;
+          border-radius: rem(3);
+          height: rem(3);
+          width: rem(26);
+          background-color: $white-color;
+
+          &:first-child {
+            width: rem(15);
+          }
+        }
+      }
+
+      @include mq("tablet") {
+        display: none;
+      }
+    }
+  }
+}
+
+.header__navigation {
+  background-color: $midnightBlue;
+  display: none;
+
+  &.absolute {
+    @media (max-width: map-get($breakpoints, "tablet")) {
+      display: block;
+      position: absolute;
+      top: 8.5%;
+      right: 1%;
+      border-radius: 10px;
+    }
+  }
+
+  &__menu__item {
+    white-space: nowrap;
+    padding: rem(30) rem(65) rem(20) rem(30);
+    border-bottom-color: $white-grey-color;
+    position: relative;
+    /*  */
+  }
+
+  & a {
+    font-family: $base-font;
+    font-weight: 400;
+    font-size: $fs-large-m;
+    line-height: $fs-large-m;
+    color: $white-color;
+    &:hover {
+      color: $DeepSkyBlue;
+    }
+  }
+}
+
+.header__navigation {
+  @include mq("tablet") {
+    margin: 20px;
+    display: block;
+    background-color: $steelBlue;
+
+    &__menu {
+      @include flex-center;
+      flex-direction: row;
+      gap: 15%;
+
+      &__item {
+        background-color: $steelBlue;
+        padding: 0;
+
+        & a {
+          font-weight: 700;
+          font-size: $fs-base;
+          line-height: rem(18);
+          color: $white-color;
+        }
+      }
+    }
+  }
+}
+
+.open__add__visit__modal-btn {
+  @include blue-btn;
+  display: none;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  font-weight: 700;
+  font-family: $base-font;
+
+  &__h2 {
+    text-shadow: 3px 5px 6px $black;
+    font-size: 100px;
+    color: $steelBlue;
+    text-align: center;
+  }
+  &__span {
+    &--time {
+      text-shadow: 3px 5px 6px $black;
+      color: $white-color;
+      font-size: 30px;
+    }
+    text-shadow: 3px 5px 6px $white-color;
+    font-size: 30px;
+    color: $midnightBlue;
+  }
+}

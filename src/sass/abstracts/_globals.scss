@@ -1,0 +1,18 @@
+// some imports
+@use "sass:math";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  min-width: 320px;
+  margin-inline: auto;
+}
+
+//Functions
+
+@function rem($pixel) {
+  @return calc($pixel / 16) * 1rem;
+}

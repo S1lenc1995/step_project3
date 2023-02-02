@@ -1,0 +1,78 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../abstracts/globals";
+.add-visit__modal,
+.modal,
+.modal__cardiologist__wrapper {
+  @include flex-center;
+  flex-direction: column;
+  gap: rem(9);
+}
+.add-visit__modal {
+  position: relative;
+  max-width: rem(640);
+  &__title {
+    font-family: $base-font;
+    font-weight: 700;
+    font-size: $fs-large-m;
+    line-height: $fs-large-m;
+    color: $black-color;
+  }
+  &__btn {
+    @include blue-btn;
+  }
+}
+.modal {
+  border: $border-default $primary-color;
+  background-color: $primary-color;
+  padding: rem(7);
+  label {
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: rem(18);
+    color: $black-color;
+  }
+  input {
+    max-width: 50%;
+    font-family: $base-font;
+    padding: rem(5);
+    border-radius: $default-border-radius;
+    @include mq("tablet") {
+      max-width: 100%;
+    }
+  }
+  .age_input {
+    width: rem(200);
+  }
+  #description {
+    width: rem(600);
+  }
+  #doctor,
+  #urgency {
+    font-family: $base-font;
+    padding: rem(5);
+    border-radius: $default-border-radius;
+  }
+  .add__visit__modal__close__btn {
+    padding: 3px;
+    color: $black-color;
+    align-self: flex-end;
+    font-size: rem(19);
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid $black-color;
+  }
+}
+//CARDIOLOGIST
+.modal__cardiologist__wrapper {
+  #pressure,
+  #bmi {
+    width: rem(200);
+  }
+}
+//CARDIOLOGIST
+#patientName,
+#aim,
+#last_visit {
+  width: max-content;
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Medical</title>
+  </head>
+
+  <body class="body">
+    <header class="header">
+      <div class="menu container">
+        <div class="menu__wrapper">
+          <a href="#" class="menu__wrapper__logo">Medical Portal 24/7</a>
+          <div class="wrap">
+            <nav class="header__navigation">
+              <ul class="header__navigation__menu">
+                <li class="header__navigation__menu__item">
+                  <a href="#">Overview</a>
+                </li>
+                <li class="header__navigation__menu__item">
+                  <a href="#">About Us</a>
+                </li>
+                <li class="header__navigation__menu__item">
+                  <a href="#">Support</a>
+                </li>
+              </ul>
+            </nav>
+
+            <button class="open menu__wrapper__logo__enter">Enter</button>
+            <button class="open__add__visit__modal-btn">Create a Visit</button>
+            <button class="menu__wrapper__burger">
+              <span class="menu__wrapper__burger__span-container">
+                <span
+                  class="menu__wrapper__burger__span-container__line"
+                ></span>
+                <span
+                  class="menu__wrapper__burger__span-container__line"
+                ></span>
+                <span
+                  class="menu__wrapper__burger__span-container__line"
+                ></span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="text">
+        <h2 class="text__h2">Medical Portal</h2>
+        <span class="text__span--time">24/7</span>
+        <span class="text__span"> Protect your health </span>
+      </div>
+    </header>
+    <section class="dashboard">
+      <div class="dashboard__opacity">
+        <div class="filter__bar container">
+          <label class="title__search" for="search"></label
+          ><input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Search by title"
+          />
+          <div class="filter__bar--select">
+            <label for="filter_done">Status</label
+            ><select name="filter" id="filter_done">
+              <option value="all">All</option>
+              <option value="Open">Open</option>
+              <option value="Done">Done</option>
+            </select>
+          </div>
+          <div class="filter__bar--select">
+            <label for="filter_priority">Urgency</label
+            ><select name="filter" id="filter_priority">
+              <option value="all">All</option>
+              <option value="Priority">Priority</option>
+              <option value="Normal">Normal</option>
+              <option value="Urgent">Urgent</option>
+            </select>
+          </div>
+          <button class="search__btn" id="search__btn">Search</button>
+        </div>
+
+
+        <div class="drop">
+          <div class="drop__container cards" id="drop-items">
+            <div class="noItems">No items have been added</div>
+              </div>
+            </div>
+            
+          </div>
+    </section>
+    <section>
+      <div id="registration__form" class="registration">
+        <div class="registration__container">
+          <div class="form__container--body">
+            <div class="add-visit__modal container">
+              <form class="modal">
+                <span class="add__visit__modal__close__btn">X</span>
+                <h2 class="add-visit__modal__title">
+                  Add Patient's information
+                </h2>
+                <div class="modal__name__wrapper">
+                  <label for="patientName">Patient name: </label
+                  ><input
+                    type="text"
+                    name="name"
+                    required
+                    minlength="5"
+                    maxlength="15"
+                    id="patientName"
+                    class="input__name"
+                    placeholder="Name"
+                  />
+                </div>
+                <div class="modal__doctor__wrapper">
+                  <label for="doctor">Doctor:</label>
+                  <select name="doctor" id="doctor">
+                    <option value="DEFAULT" disabled selected>
+                      Choose a doctor
+                    </option>
+                    <option value="Cardiologist">Cardiologist</option>
+                    <option value="Dentist">Dentist</option>
+                    <option value="Physician">Physician</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="date_visit">Date of visit: </label>
+                  <input
+                    type="date"
+                    name="date_visit"
+                    id="date_visit"
+                    class="last_visit_input"
+                  />
+                </div>
+                <div class="modal__urgency__wrapper">
+                  <label for="urgency">Urgency:</label>
+                  <select name="urgency" id="urgency">
+                    <option value="Normal">Normal</option>
+                    <option value="Priority">Priority</option>
+                    <option value="Urgent">Urgent</option>
+                  </select>
+                </div>
+                <div class="modal__aim__wrapper">
+                  <label for="aim">Aim of the patient's visit: </label
+                  ><input
+                    type="text"
+                    name="aim"
+                    required
+                    minlength="2"
+                    maxlength="15"
+                    id="aim"
+                    class="aim_input"
+                    placeholder="Aim of a visit"
+                  />
+                </div>
+                <div class="modal__description__wrapper">
+                  <label for="description"
+                    >A short description of the appointment: </label
+                  ><input
+                    type="text"
+                    name="description"
+                    required
+                    minlength="2"
+                    maxlength="50"
+                    id="description"
+                    class="description_input"
+                    placeholder="State a short description of the patient's appointment before a he/she sees a doctor"
+                  />
+                </div>
+                <div class="doctors__container"></div>
+                <button type="submit" class="add-visit__modal__btn">
+                  Create
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div>
+      <div id="registration-form" class="registration">
+        <div class="registration__container">
+          <div class="registration__container--body">
+            <p class="registration__container--body__title">
+              Enter your information
+            </p>
+            <form class="modal__login__form">
+              <label>
+                <input
+                  name="email"
+                  class="registration-input"
+                  type="email"
+                  placeholder="Email"
+                  required
+                />
+              </label>
+              <label>
+                <input
+                  name="password"
+                  class="registration-input"
+                  type="password"
+                  placeholder="Password"
+                  required
+                />
+              </label>
+              <button id="send-registration" type="submit">Send</button>
+            </form>
+            <div class="registration__close__btn">&#10006;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div>&#169; Copyright 2022</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script type="module" src="/scripts/bundle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../abstracts/globals";
+.dashboard {
+  flex-grow: 1;
+  overflow-y:auto;
+  background-image: url("/assets/medicine.png");
+  @include img-parallax;
+  display: flex;
+  flex-direction: column;
+  &__opacity {
+    background-color: rgba(255, 255, 255, 0.8);
+    flex-grow: 1;
+  }
+}
+.cards {
+  @include card-wrap;
+  padding: rem(20);
+  &__card {
+    background-color: $primary-color;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: rem(12);
+    border-radius: rem(4);
+    border: 1px solid $light-grey-color;
+    box-shadow: rem(4) rem(4) rem(8) 0 $light-grey-color;
+    margin: rem(10);
+    position: relative;
+    font-family: $base-font;
+    h3 {
+      width: 100%;
+      text-align: center;
+      font-size: $fs-medium;
+      margin-top: rem(5);
+      margin-bottom: rem(20);
+    }
+    p {
+      color: $black;
+    }
+  }
+}
+.btn_container {
+  margin-top: rem(5);
+  @include flex-center;
+  flex-direction: column;
+  gap: rem(5);
+  .show__more__btn,
+  .edit__btn {
+    @include blue-btn;
+    width: fit-content;
+  }
+}
+.close__btn {
+  align-self: flex-end;
+  cursor: pointer;
+}

@@ -1,0 +1,79 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../abstracts/globals";
+.registration {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  transform: translateY(0%) scale(0);
+  transition: 0.4s ease-in-out;
+  &__close__btn {
+    position: absolute;
+    top: rem(15);
+    right: rem(15);
+    font-size: $fs-large-t;
+    cursor: pointer;
+  }
+  &-input {
+    display: block;
+    margin: rem(25) auto 0 auto;
+    width: rem(300);
+    padding: rem(17) rem(20);
+    background-color: $light-blue;
+    border-radius: rem(10);
+    border: none;
+    font-weight: 700;
+    font-size: $fs-medium;
+    color: $darkBlue;
+  }
+  &__container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    &--body {
+      margin: auto;
+      width: rem(500);
+      background-color: $primary-color;
+      border-radius: rem(10);
+      text-align: center;
+      padding: rem(100) rem(15);
+      position: relative;
+      &__title {
+        font-family: $base-font;
+        font-weight: 700;
+        font-size: $fs-large-m;
+        line-height: $fs-large-m;
+        color: $black-color;
+        margin-bottom: rem(40);
+      }
+      input:focus {
+        outline: none;
+      }
+    }
+  }
+}
+.registration.active {
+  transform: translateY(0%) scale(100%);
+  background-color: $opacity-black-color;
+}
+
+.modal__login__form {
+  display: inline-grid;
+  .registration-input {
+    margin-bottom: rem(7);
+  }
+  #send-registration {
+    @include blue-btn;
+  }
+}
+
+.form__container--body {
+  margin: auto;
+  width: rem(500);
+  border-radius: rem(10);
+  text-align: center;
+  position: relative;
+}

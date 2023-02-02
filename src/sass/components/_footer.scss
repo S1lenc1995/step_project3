@@ -1,0 +1,11 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../abstracts/globals";
+.footer {
+  @include flex-center;
+  background-color: $steelBlue;
+  height: rem(100);
+  flex-grow: 0; /*Запрещаем увеличиваться*/
+  flex-shrink: 0; /*Запрещаем сжиматься*/
+  flex-basis: auto;
+}
